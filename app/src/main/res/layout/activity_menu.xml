@@ -21,24 +21,43 @@
         android:id="@+id/button_start"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorElementsBackground"
         android:onClick="start_button_pressed"
-        android:text="@string/name_button_start" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_settings"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorElementsBackground"
         android:onClick="settings_button_pressed"
-        android:text="@string/name_button_settings" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_exit"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorElementsBackground"
         android:onClick="exit_button_pressed"
-        android:text="@string/name_button_exit" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/login_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorText" />
 
 </LinearLayout>

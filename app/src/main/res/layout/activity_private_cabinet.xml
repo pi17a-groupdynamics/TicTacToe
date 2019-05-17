@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorElementsBackground"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/private_cabinet_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="30dp"
+            android:padding="15dp"
+            android:textColor="@color/colorText"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_level_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorHint"
+                android:textSize="29sp" />
+
+            <TextView
+                android:id="@+id/player_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorText"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorHint"
+                    android:textSize="25sp"
+                    android:id="@+id/login_header" />
+
+                <TextView
+                    android:id="@+id/login_textview"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorHint"
+                    android:textSize="25sp"
+                    android:id="@+id/password_header" />
+
+                <TextView
+                    android:id="@+id/password_textview"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorText"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorHint"
+                android:textSize="27sp"
+                android:id="@+id/account_control_header" />
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="7dp"
+                    android:textColor="@color/colorHint"
+                    android:textSize="22sp"
+                    android:id="@+id/new_login_header" />
+
+                <EditText
+                    android:id="@+id/new_login_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="27sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/change_button_1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="change_login_button_pressed"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="7dp"
+                    android:textColor="@color/colorHint"
+                    android:textSize="22sp"
+                    android:id="@+id/new_password_header" />
+
+                <EditText
+                    android:id="@+id/new_password_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:inputType="textPassword"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="27sp" />
+
+            </LinearLayout>
+
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="change_password_button_pressed"
+                android:textSize="16sp"
+                android:id="@+id/change_button_2" />
+
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="back_button_pressed"
+            android:textSize="20sp"
+            android:id="@+id/back_button" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="logout_button_clicked"
+            android:textSize="20sp"
+            android:id="@+id/logout_account" />
+
+    </LinearLayout>
+
+</ScrollView>

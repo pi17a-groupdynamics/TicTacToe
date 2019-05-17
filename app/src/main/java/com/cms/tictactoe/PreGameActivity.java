@@ -2,15 +2,22 @@ package com.cms.tictactoe;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.ColorStateList;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class PreGameActivity extends AppCompatActivity {
 
+    TextView parameters_textview;
+    TextView game_type_textview;
+    TextView difficulty_textview;
+    TextView grid_size_textview;
+    TextView mark_type_textview;
+    Button start_button;
+    Button back_button;
     RadioButton computer_radio;
     RadioButton human_radio;
     RadioButton easy_radio;
@@ -28,16 +35,75 @@ public class PreGameActivity extends AppCompatActivity {
     String CODE_3X3_PLAYER_TYPE = "*M68m=bvBn6%5";
     String CODE_4X4_PLAYER_TYPE = "8{#e6c?~qL%?OK";
 
-    public int computer_difficulty;
-    public int grid_size;
-    public int mark_type;
-    public int player_type;
+    int computer_difficulty;
+    int grid_size;
+    int mark_type;
+    int player_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_pre_game);
+        setUpElements();
+        setUpDefaultValue();
+        setText();
+    }
+
+    private void setText() {
+        String temp = ((MyApplication) this.getApplication()).getTextLine(14);
+        parameters_textview.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(15);
+        game_type_textview.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(16);
+        difficulty_textview.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(17);
+        grid_size_textview.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(18);
+        mark_type_textview.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(20);
+        human_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(19);
+        computer_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(21);
+        easy_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(22);
+        normal_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(23);
+        hard_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(24);
+        grid3x3_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(25);
+        grid4x4_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(26);
+        cross_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(27);
+        oval_radio.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(28);
+        start_button.setText(temp);
+        temp = ((MyApplication) this.getApplication()).getTextLine(13);
+        back_button.setText(temp);
+    }
+
+    private void setUpDefaultValue() {
+        computer_radio.setChecked(true);
+        easy_radio.setChecked(true);
+        grid3x3_radio.setChecked(true);
+        cross_radio.setChecked(true);
+        mark_type = 2;
+        computer_difficulty = 1;
+        grid_size = 1;
+        player_type = 1;
+    }
+
+    private void setUpElements() {
+        parameters_textview = findViewById(R.id.parameters_textview);
+        game_type_textview = findViewById(R.id.game_type_textview);
+        difficulty_textview = findViewById(R.id.difficulty_textview);
+        grid_size_textview = findViewById(R.id.grid_size_textview);
+        mark_type_textview = findViewById(R.id.mark_type_textview);
+        start_button = findViewById(R.id.start_button);
+        back_button = findViewById(R.id.back_button);
         computer_radio = findViewById(R.id.computer_radio_button);
         human_radio = findViewById(R.id.human_radio_button);
         easy_radio = findViewById(R.id.easy_radio_button);
@@ -47,25 +113,6 @@ public class PreGameActivity extends AppCompatActivity {
         grid4x4_radio = findViewById(R.id.cell4x4_radio_button);
         cross_radio = findViewById(R.id.cross_radio_button);
         oval_radio = findViewById(R.id.oval_radio_button);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            computer_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            human_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            easy_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            normal_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            hard_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            grid3x3_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            grid4x4_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            cross_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-            oval_radio.setButtonTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimaryDark)));
-        }
-        computer_radio.setChecked(true);
-        easy_radio.setChecked(true);
-        grid3x3_radio.setChecked(true);
-        cross_radio.setChecked(true);
-        mark_type = 2;
-        computer_difficulty = 1;
-        grid_size = 1;
-        player_type = 1;
     }
 
     public void back_button_pressed(View view) {
